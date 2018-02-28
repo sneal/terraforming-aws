@@ -18,4 +18,6 @@ variable "iam_user_name" {}
 
 variable "dns_suffix" {}
 
+variable "bucket_suffix" {}
+
 variable "zone_id" {}

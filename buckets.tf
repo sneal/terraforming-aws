@@ -1,5 +1,9 @@
+resource "random_id" "bucket" {
+  byte_length = 4
+}
+
 resource "aws_s3_bucket" "buildpacks_bucket" {
-  bucket        = "${var.env_name}-buildpacks-bucket"
+  bucket        = "${var.env_name}-buildpacks-${random_id.bucket.hex}"
   force_destroy = true
 
   versioning {
@@ -12,7 +16,7 @@ resource "aws_s3_bucket" "buildpacks_bucket" {
 }
 
 resource "aws_s3_bucket" "droplets_bucket" {
-  bucket        = "${var.env_name}-droplets-bucket"
+  bucket        = "${var.env_name}-droplets-${random_id.bucket.hex}"
   force_destroy = true
 
   versioning {
@@ -25,7 +29,7 @@ resource "aws_s3_bucket" "droplets_bucket" {
 }
 
 resource "aws_s3_bucket" "packages_bucket" {
-  bucket        = "${var.env_name}-packages-bucket"
+  bucket        = "${var.env_name}-packages-${random_id.bucket.hex}"
   force_destroy = true
 
   versioning {
@@ -38,7 +42,7 @@ resource "aws_s3_bucket" "packages_bucket" {
 }
 
 resource "aws_s3_bucket" "resources_bucket" {
-  bucket        = "${var.env_name}-resources-bucket"
+  bucket        = "${var.env_name}-resources-${random_id.bucket.hex}"
   force_destroy = true
 
   versioning {
