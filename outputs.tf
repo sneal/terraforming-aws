@@ -22,6 +22,10 @@ output "blobstore_kms_key_id" {
   value = "${aws_kms_key.blobstore_kms_key.key_id}"
 }
 
+output "ebs_volume_kms_key_arn" {
+  value = "${module.ops_manager.ebs_volume_kms_key_arn}"
+}
+
 output "ops_manager_public_ip" {
   value = "${module.ops_manager.public_ip}"
 }

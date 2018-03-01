@@ -51,3 +51,7 @@ data "template_file" "ops_manager" {
     ops_manager_bucket_arn   = "${aws_s3_bucket.ops_manager_bucket.arn}"
   }
 }
+
+resource "aws_kms_key" "ebs_volume_kms_key" {
+  description = "EBS volumes custom encryption key"
+}

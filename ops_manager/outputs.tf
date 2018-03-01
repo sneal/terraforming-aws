@@ -29,3 +29,7 @@ output "ssh_public_key_name" {
 output "ops_manager_private_ip" {
   value = "${element(concat(aws_instance.ops_manager.*.private_ip, list("")), 0)}"
 }
+
+output "ebs_volume_kms_key_arn" {
+  value = "${aws_kms_key.ebs_volume_kms_key.arn}"
+}
