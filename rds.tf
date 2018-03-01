@@ -4,6 +4,7 @@ resource "random_string" "rds_password" {
 }
 
 resource "aws_db_instance" "rds" {
+  name                   = "${var.rds_db_name}"
   allocated_storage      = 100
   instance_class         = "${var.rds_instance_class}"
   engine                 = "mysql"

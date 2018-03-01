@@ -28,6 +28,10 @@ variable "ops_manager_instance_type" {
   default = "r4.large"
 }
 
+variable "rds_db_name" {
+  default = "bosh"
+}
+
 variable "rds_db_username" {
   default = "admin"
 }

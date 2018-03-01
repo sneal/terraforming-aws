@@ -74,6 +74,10 @@ output "rds_port" {
   value = "${element(concat(aws_db_instance.rds.*.port, list("")), 0)}"
 }
 
+output "rds_db_name" {
+  value = "${var.rds_db_name}"
+}
+
 output "rds_username" {
   value = "${element(concat(aws_db_instance.rds.*.username, list("")), 0)}"
 }
