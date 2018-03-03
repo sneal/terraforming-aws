@@ -25,6 +25,20 @@ resource "aws_security_group" "ops_manager_security_group" {
     to_port     = 443
   }
 
+  ingress {
+    cidr_blocks = ["10.0.0.0/16"]
+    protocol    = "tcp"
+    from_port   = 6868
+    to_port     = 6868
+  }
+
+  ingress {
+    cidr_blocks = ["10.0.0.0/16"]
+    protocol    = "tcp"
+    from_port   = 25555
+    to_port     = 25555
+  }
+
   egress {
     cidr_blocks = ["0.0.0.0/0"]
     protocol    = "-1"
